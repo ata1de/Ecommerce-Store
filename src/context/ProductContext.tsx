@@ -1,15 +1,15 @@
 import React, { ReactNode, createContext, useEffect, useState } from 'react'
-import { ListTypeProduct } from '../types/types';
+import { ProductEntity } from '../types/types';
 
 interface ProductProviderProps {
     children: ReactNode;
 } 
 
-export const ProductContext = createContext<ListTypeProduct[]>([]);
+export const ProductContext = createContext<ProductEntity[]>([]);
 
 const ProductProvider: React.FC<ProductProviderProps> = ({ children })=> {
     // estado do produto
-    const [listProduct, setlistProduct] = useState<ListTypeProduct[]>([]);
+    const [listProduct, setlistProduct] = useState<ProductEntity[]>([]);
 
     useEffect(() =>{
         const fetchProducts = async () => {

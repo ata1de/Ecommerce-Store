@@ -17,12 +17,12 @@ const Header = () => {
      const { isOpen, setIsOpen, handleCloser } = contextValue;
 
   return (
-    <div>
+    <header className='bg-pink-200'>
       <div>Header</div>
       <div onClick={() => setIsOpen(!isOpen)}>
         <BsBag className='text-2xl cursor-pointer flex relative' />
       </div>
-    </div>
+    </header>
   )
 }
 
