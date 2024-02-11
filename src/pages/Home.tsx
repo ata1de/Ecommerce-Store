@@ -8,14 +8,14 @@ import Product from '../components/Product';
 export const Home = () => {
   // Explicitamos o tipo do contexto ao utilizar useContext
   const products: ProductEntity[] = useContext(ProductContext);
-  console.log(products);
+  // console.log(products);
 
   // conseguir somente a categoria de roupa feminina e masculina
   const filteredProduct = products.filter( (item) => {
     return (item.category === "men's clothing"|| item.category === "women's clothing"
     ); 
   });
-  console.log(filteredProduct)
+  // console.log(filteredProduct)
 
   return (
     <div>

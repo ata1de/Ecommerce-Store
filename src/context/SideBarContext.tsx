@@ -7,7 +7,6 @@ interface SideBarProviderProps {
 interface ValueProps {
     isOpen: boolean;
     setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-    handleCloser: () => void;
 }
 
 export const SideBarContext = createContext<ValueProps | undefined>(undefined);
@@ -15,14 +14,9 @@ export const SideBarContext = createContext<ValueProps | undefined>(undefined);
 const SideBarProvider: React.FC<SideBarProviderProps> = ({ children }) => {
     const [isOpen, setIsOpen] = useState(false);
 
-    const handleCloser = () => {
-        setIsOpen(false);
-    };
-
     const value: ValueProps = {
         isOpen,
         setIsOpen,
-        handleCloser,
     };
 
     return (

@@ -34,7 +34,7 @@ const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
        
        
     };
-    console.log(cart)    
+    // console.log(cart)    
 
     return (
         <CartContext.Provider value={{ cart, addToCart }}>
