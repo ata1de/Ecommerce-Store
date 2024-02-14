@@ -46,10 +46,14 @@ const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
             console.log('O item não está no carrinho');
         }
 };
+
+    const clearCart = () =>{
+        setCart([]);
+    }
     
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeToCart }}>
+        <CartContext.Provider value={{ cart, addToCart, removeToCart, clearCart }}>
             {children}
         </CartContext.Provider>
     );

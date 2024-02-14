@@ -28,6 +28,7 @@ export type TypeProduct = {
     cart?: ProductEntity[];
     addToCart: (product: TypeProduct) => void;
     removeToCart: (product: TypeProduct) => void;
+    clearCart: () => void;
     // updateCart?: (cart: Cart) => void;
     // outras funções e propriedades relevantes
 }

@@ -19,7 +19,7 @@ const SideBar = () => {
   }
   // Extrai as propriedades do contexto
   const { isOpen, setIsOpen } = contextValue;
-  const { cart } = cartContextValue
+  const { cart, clearCart } = cartContextValue
 
   // função para contabilizar quantos itens tem no carrinho
   const cartNumber = cart ? cart.reduce((total, item) => total + item.amount, 0) : 0;
@@ -44,11 +44,11 @@ const SideBar = () => {
           <p>O carrinho está vazio.</p>
         )}
       </div>
-      <div>
-        <div className='flex h-full bg-pink-200 justify-between items-center'>
-          <div><span>Total:</span>$1000</div>
-          <div className='cursor-pointer py-4 bg-red-500 text-white w-12 h-12 flex justify-center items-center text-xl'>
-            <IoMdTrash />
+      <div className='flex flex-col gap-y-3 py-4'>
+        <div className='flex h-full justify-between items-center'>
+          <div className='font-semibold uppercase'><span className='mr-2'>Total:</span>$1000</div>
+          <div className=' hover:bg-pink-300 cursor-pointer py-4 bg-pink-500 text-white w-12 h-12 flex justify-center items-center text-xl'>
+            <IoMdTrash onClick={() => clearCart()}/>
           </div>
         </div>
       </div>
