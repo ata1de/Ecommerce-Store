@@ -32,24 +32,20 @@ const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
             setCart([...cart, newItem])
         }};
 
-    const removeToCart = ({product}: TypeProduct) =>{
-        const cartItem = cart.find((item) => {
-            return item.id === product.id
-        })
+    const removeToCart = ({ product }: TypeProduct) => {
+        const cartItemIndex = cart.findIndex((item) => item.id === product.id);
 
-        if (cartItem) {
-            const newCart = [...cart].map(item =>{
-                if (item.id === product.id){
-                    return {...item, amount:item.amount -1}
-                } else {
-                    return item
-                }
-            })
-            setCart(newCart)
-        } else{
-            console.log('o item não está no carrinho')
+        if (cartItemIndex !== -1) {
+            const newCart = [...cart];
+            newCart[cartItemIndex].amount -= 1;
+            if (newCart[cartItemIndex].amount <= 0) {
+                newCart.splice(cartItemIndex, 1);
+            }
+            setCart(newCart);
+        } else {
+            console.log('O item não está no carrinho');
         }
-    }
+};
     
 
     return (
