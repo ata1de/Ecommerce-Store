@@ -27,7 +27,7 @@ export type TypeProduct = {
   export interface CartContextType {
     cart?: ProductEntity[];
     addToCart: (product: TypeProduct) => void;
-    removeFromCart?: (productId: string) => void;
+    removeToCart: (product: TypeProduct) => void;
     // updateCart?: (cart: Cart) => void;
     // outras funções e propriedades relevantes
 }

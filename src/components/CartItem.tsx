@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { ProductEntity, TypeProduct } from '../types/types'
 import { CartContext } from '../context/CartContext';
 
@@ -10,7 +10,18 @@ const CartItem = ({product}: TypeProduct) => {
       return null;
   }
 
-  const { addToCart } = contextValue;
+  const { addToCart, removeToCart } = contextValue;
+
+  const [quantity, setQuantity] = useState(product.amount);
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'ArrowUp') {
+      addToCart({product}); // Limitando a 10 unidades
+    } else if (event.key === 'ArrowDown' && product.amount > 1) {
+      removeToCart({product}); // Garantindo um mínimo de 1 unidade
+    }
+  };
+
   console.log(product.id)
   return (
     <div className="border-b">
@@ -24,7 +35,7 @@ const CartItem = ({product}: TypeProduct) => {
             </div>
             <div>
               <p>R$ {product.price}</p>
-              <input type="number" name="quantity" id="quantity" min="1"max="10"value={product.amount} onChange={()=> addToCart({product})}/>
+              <input type="number" name="quantity" id="quantity" min="1"max="10"value={product.amount} onKeyDown={handleKeyDown}/>
 
             </div>
         </div>
