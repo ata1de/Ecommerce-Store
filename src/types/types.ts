@@ -29,6 +29,7 @@ export type TypeProduct = {
     addToCart: (product: TypeProduct) => void;
     removeToCart: (product: TypeProduct) => void;
     clearCart: () => void;
+    deleteToCartX: (product: TypeProduct) => void;
     // updateCart?: (cart: Cart) => void;
     // outras funções e propriedades relevantes
 }

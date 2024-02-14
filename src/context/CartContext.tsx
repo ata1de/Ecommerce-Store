@@ -44,8 +44,15 @@ const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
             setCart(newCart);
         } else {
             console.log('O item não está no carrinho');
-        }
-};
+        }};
+    
+    const deleteToCartX = ({product}: TypeProduct) =>{
+        const newCart = cart.filter((item) =>{
+            return item.id !== product.id
+
+        });;
+        setCart(newCart)
+    }
 
     const clearCart = () =>{
         setCart([]);
@@ -53,7 +60,7 @@ const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     
 
     return (
-        <CartContext.Provider value={{ cart, addToCart, removeToCart, clearCart }}>
+        <CartContext.Provider value={{ cart, addToCart, removeToCart, clearCart, deleteToCartX }}>
             {children}
         </CartContext.Provider>
     );

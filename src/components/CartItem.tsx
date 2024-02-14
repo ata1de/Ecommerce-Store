@@ -11,7 +11,7 @@ const CartItem = ({product}: TypeProduct) => {
       return null;
   }
 
-  const { addToCart, removeToCart } = contextValue;
+  const { addToCart, removeToCart, deleteToCartX } = contextValue;
   const [quantity, setQuantity] = useState(product.amount)
 
   const handleChangeQuantity = (event: ChangeEvent<HTMLInputElement>) => {
@@ -53,7 +53,7 @@ const CartItem = ({product}: TypeProduct) => {
                     <IoMdAdd onClick={() => addToCart({product})}/>
                   </div>
                 </div>
-                <IoMdClose onClick={() => removeToCart({product})} className='text-gray-500 hover:text-red-500 transition cursor-pointer'/>
+                <IoMdClose onClick={() => deleteToCartX({product})} className='text-gray-500 hover:text-red-500 transition cursor-pointer'/>
               </div>
 
             </div>
