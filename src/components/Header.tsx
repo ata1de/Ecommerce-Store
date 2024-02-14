@@ -14,7 +14,7 @@ const Header = () => {
      }
    
      // Extrai as propriedades do contexto
-     const { isOpen, setIsOpen, handleCloser } = contextValue;
+     const { isOpen, setIsOpen} = contextValue;
 
   return (
     <header className='bg-pink-200'>

@@ -4,16 +4,16 @@ import App from './App.tsx'
 import './index.css'
 import ProductProvider from './context/ProductContext.tsx'
 import SideBarProvider from './context/SideBarContext.tsx'
-import CartProvider, { CartContext } from './context/CartContext.tsx'
+import CartProvider from './context/CartContext.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
-  <SideBarProvider>
-    <CartProvider>
+  <CartProvider>
+    <SideBarProvider>
       <ProductProvider>
-        <React.StrictMode>
-          <App />
-        </React.StrictMode>
-      </ProductProvider>
-    </CartProvider>
-  </SideBarProvider>
-)
+          <React.StrictMode>
+            <App />
+          </React.StrictMode>
+        </ProductProvider>
+    </SideBarProvider>
+  </CartProvider>
+  )
