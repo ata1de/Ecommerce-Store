@@ -4,6 +4,7 @@ import { ProductContext } from '../context/ProductContext'
 // Importe o tipo Product do arquivo onde ele é definido
 import { ProductEntity } from '../types/types';
 import Product from '../components/Product';
+import Hero from '../components/Hero';
 
 export const Home = () => {
   // Explicitamos o tipo do contexto ao utilizar useContext
@@ -19,6 +20,7 @@ export const Home = () => {
 
   return (
     <div>
+      <Hero />
       <section className='py-16'>
         <div className='container mx-auto'>
           <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5

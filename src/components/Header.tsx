@@ -25,7 +25,7 @@ const Header = () => {
      console.log(cartNumber)
 
   return (
-    <header className='bg-pink-200'>
+    <header className='w-full fixed z-10 transition-all'>
       <div className='container flex mx-auto items-center justify-between h-full'>
         <div>
             <img className='w-[40px]'src={logo} alt="logo" />
