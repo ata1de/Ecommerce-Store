@@ -19,7 +19,7 @@ const SideBar = () => {
   }
   // Extrai as propriedades do contexto
   const { isOpen, setIsOpen } = contextValue;
-  const { cart, clearCart } = cartContextValue
+  const { cart, clearCart, deleteToCartX, total } = cartContextValue
 
   // função para contabilizar quantos itens tem no carrinho
   const cartNumber = cart ? cart.reduce((total, item) => total + item.amount, 0) : 0;
@@ -34,7 +34,7 @@ const SideBar = () => {
           <IoMdArrowForward onClick={() => setIsOpen(!isOpen)} className='text-2xl'/>
         </div>
       </div>
-      <div>
+      <div >
         {/* Verifcação se o carrinho é undefined */}
         {cart ? (
           cart.map((item) => {
@@ -46,7 +46,7 @@ const SideBar = () => {
       </div>
       <div className='flex flex-col gap-y-3 py-4'>
         <div className='flex h-full justify-between items-center'>
-          <div className='font-semibold uppercase'><span className='mr-2'>Total:</span>$1000</div>
+          <div className='font-semibold uppercase'><span className='mr-2'>Total:</span>R$ {total.toFixed(2)}</div>
           <div className=' hover:bg-pink-300 cursor-pointer py-4 bg-pink-500 text-white w-12 h-12 flex justify-center items-center text-xl'>
             <IoMdTrash onClick={() => clearCart()}/>
           </div>
