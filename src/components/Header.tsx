@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { SideBarContext } from '../context/SideBarContext'
 import { CartContext } from '../context/CartContext';
 import { BsBag } from 'react-icons/bs';
@@ -9,6 +9,7 @@ const Header = () => {
      // Use o hook useContext para acessar o contexto
      const contextValue = useContext(SideBarContext);
      const cartContextValue = useContext(CartContext)
+     const [isactive, setIsActive] = useState(false)
 
      // Verifica se o contexto não é undefined
      if (!contextValue || !cartContextValue) {
@@ -24,8 +25,14 @@ const Header = () => {
      const cartNumber = cart ? cart.reduce((total, item) => total + item.amount, 0) : 0;
      console.log(cartNumber)
 
+     useEffect(()=>{
+        window.addEventListener('scroll', ()=>{
+          window.scrollY > 60 ? setIsActive(true) : setIsActive(false)
+        })
+     })
+
   return (
-    <header className='w-full fixed z-10 transition-all'>
+    <header className={`${isactive ? 'bg-white py-4 shadow-md' : 'big-none py-6'} fixed w-full z-10 transition-all `}>
       <div className='container flex mx-auto items-center justify-between h-full'>
         <div>
             <img className='w-[40px]'src={logo} alt="logo" />
