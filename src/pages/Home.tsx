@@ -5,6 +5,7 @@ import { ProductContext } from '../context/ProductContext'
 import { ProductEntity } from '../types/types';
 import Product from '../components/Product';
 import Hero from '../components/Hero';
+import Footer from '../components/Footer';
 
 export const Home = () => {
   // Explicitamos o tipo do contexto ao utilizar useContext

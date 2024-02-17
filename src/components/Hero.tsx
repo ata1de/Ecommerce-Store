@@ -14,7 +14,6 @@ const Hero = () => {
                     AUTUM SALE STYLISH <br />
                     <span className='font-semibold'>WOMENS</span>
                 </h1>
-
             </div>
 
             <div className='hidden lg:block '>
