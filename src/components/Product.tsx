@@ -27,7 +27,7 @@ const Product = ({product}: TypeProduct) => {
                                 <BsPlus className="text-3xl" />
                             </div>
                         </button>
-                        <Link to={`/product/${product.id}`} className="w-12 h-12 bg-white flex justify-center items-center text-primary drop-shadow-xl">
+                        <Link to={`/products/${product.id}`} className="w-12 h-12 bg-white flex justify-center items-center text-primary drop-shadow-xl">
                             <BsEyeFill />
                         </Link>
                     </div>

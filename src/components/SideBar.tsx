@@ -26,7 +26,7 @@ const SideBar = () => {
 
   console.log(cartNumber)
   return (
-    <div className={`${isOpen ? 'right-0' : '-right-full' } w-full bg-white fixed top-0 h-full shadow-2xl md:w-[35vw] xl:w-[30vw]
+    <div className={`${isOpen ? 'right-0' : '-right-full' } w-full bg-white fixed top-0 h-full shadow-2xl md:w-[35vw] xl:max-w-[30vw]
     transition-all duration-300 z-20 px-4 lg:px-[35px]`}>
       <div className='flex items-center justify-between py-6 border-b'>
         <div className='uppercase text-sm font-semibold'>Shopping Bag ({cartNumber})</div>
@@ -34,7 +34,7 @@ const SideBar = () => {
           <IoMdArrowForward onClick={() => setIsOpen(!isOpen)} className='text-2xl'/>
         </div>
       </div>
-      <div >
+      <div className='flex flex-col gap-y-2 h-[480px] lg:h-[620px] overflow-y-auto overflow-x-hidden border-b'>
         {/* Verifcação se o carrinho é undefined */}
         {cart ? (
           cart.map((item) => {
@@ -44,8 +44,8 @@ const SideBar = () => {
           <p>O carrinho está vazio.</p>
         )}
       </div>
-      <div className='flex flex-col gap-y-3 py-4'>
-        <div className='flex h-full justify-between items-center'>
+      <div className='flex flex-col gap-y-3 py-4 mt-4'>
+        <div className='flex w-full justify-between items-center'>
           <div className='font-semibold uppercase'><span className='mr-2'>Total:</span>R$ {total.toFixed(2)}</div>
           <div className=' hover:bg-pink-300 cursor-pointer py-4 bg-pink-500 text-white w-12 h-12 flex justify-center items-center text-xl'>
             <IoMdTrash onClick={() => clearCart()}/>
