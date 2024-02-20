@@ -35,7 +35,7 @@ const Product = ({product}: TypeProduct) => {
             </div>
             <div>
                 <div className="text-sm capitalize mb-1 text-gray-500">{product.category}</div>
-                <Link to={`/product/${product.id}`}>
+                <Link to={`/products/${product.id}`}>
                     <h2 className="font-semibold mb-1 ">{product.title}</h2>
                 </Link>
                 <div className="font-semibold">{product.price}</div>

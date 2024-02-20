@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { SideBarContext } from '../context/SideBarContext'
 import { CartContext } from '../context/CartContext';
 import { BsBag } from 'react-icons/bs';
@@ -34,9 +34,11 @@ const Header = () => {
   return (
     <header className={`${isactive ? 'bg-white py-4 shadow-md' : 'big-none py-6'} fixed w-full z-10 transition-all `}>
       <div className='container flex mx-auto items-center justify-between h-full'>
-        <div>
-            <img className='w-[40px]'src={logo} alt="logo" />
-        </div>
+        <Link to={`/`}>
+          <div>
+              <img className='w-[40px]'src={logo} alt="logo" />
+          </div>
+        </Link>
         
         <div onClick={() => setIsOpen(!isOpen)}
             className='cursor-pointer flex relative'>
