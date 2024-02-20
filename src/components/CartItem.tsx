@@ -24,12 +24,12 @@ const CartItem = ({product}: TypeProduct) => {
               <Link to={`/products/${product.id}`}>
                 <div className=' flex-col flex gap-y-2 text-sm uppercase font-medium max-w[240px] text-primary hover:underline cursor-pointer'>
                   <p >{product.title}</p>
-                  <p>{product.price}</p>
+                  <p>R$ {product.price}</p>
                 </div>
               </Link>
             </div>
             <div>
-              <p className='mb-2 text-md font-semibold text-right'>{`$ ${(product.amount * product.price).toFixed(2)}`}</p>
+              <p className='mb-2 text-md font-semibold text-right'>{`R$ ${(product.amount * product.price).toFixed(2)}`}</p>
               <div className='flex items-center gap-x-3'>
                 <div className=' gap-x-1 flex flex-1 max-w[100px] items-center justify-center h-full border'>
                   <div className='flex-1 h-full flex justify-center items-center cursor-pointer'>
