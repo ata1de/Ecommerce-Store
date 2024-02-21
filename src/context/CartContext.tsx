@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
+import React, { createContext,useEffect, useState } from "react";
 import { CartContextType, ProductEntity,TypeProduct } from "../types/types";
 
 interface CartProviderProps {
@@ -10,7 +10,7 @@ export const CartContext = createContext<CartContextType|undefined>(undefined);
 const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
     const [cart, setCart] = useState<ProductEntity[]>([]);
     // total acumulado no carrinho
-    const [itemAmount, setItemAmount] = useState(0)
+    // const [itemAmount, setItemAmount] = useState(0)
     const [total, setTotal] = useState(0)
 
     useEffect(()=>{
@@ -21,14 +21,14 @@ const CartProvider: React.FC<CartProviderProps> = ({ children }) => {
 
     }, [cart])
 
-    useEffect(() =>{
-        if (cart){
-            const amount = cart.reduce((accumulator, currentItem) =>{
-                return accumulator + currentItem.amount
-            }, 0)
-            setItemAmount(amount)
-        }
-    }, [cart])
+    // useEffect(() =>{
+    //     if (cart){
+    //         const amount = cart.reduce((accumulator, currentItem) =>{
+    //             return accumulator + currentItem.amount
+    //         }, 0)
+    //         setItemAmount(amount)
+    //     }
+    // }, [cart])
 
     const addToCart = ({product}: TypeProduct) => {
         const newItem = {...product, amount: 1}

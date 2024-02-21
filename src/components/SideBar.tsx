@@ -20,7 +20,7 @@ const SideBar = () => {
   }
   // Extrai as propriedades do contexto
   const { isOpen, setIsOpen } = contextValue;
-  const { cart, clearCart, deleteToCartX, total } = cartContextValue
+  const { cart, clearCart,total } = cartContextValue
 
   // função para contabilizar quantos itens tem no carrinho
   const cartNumber = cart ? cart.reduce((total, item) => total + item.amount, 0) : 0;
