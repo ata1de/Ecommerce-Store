@@ -20,4 +20,4 @@ git clone https://github.com/ata1de/Ecommerce-Store.git
 npm install
 ```
 ## Acessar o projeto 👏
-https://ecommerce-store-vert.vercel.app
+<a href="https://ecommerce-store-vert.vercel.app" target='_blank'>Clique aqui</a>
