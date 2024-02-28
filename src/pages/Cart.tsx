@@ -12,7 +12,7 @@ const Cart = () => {
       const { cart, total } = contextCart
   return (
     <div className="flex flex-col justify-center h-screen mx-5">
-        <div>
+        <div className="h-[300px] lg:h-[650px] md:h-[400px] xl:h-[600px] ">
             <h1 className="font-semibold text-6xl mb-5">Carrinho</h1>
             <div className="mt-4 overflow-y-auto overflow-x-hidden h-[500px] lg:h-[600px]">
                 <table className='w-full'>
@@ -39,7 +39,6 @@ const Cart = () => {
                 </table>
             </div>
             <div className="ml-auto mt-4 text-center font-semibold text-xl p-4 border-2 w-[260px]"><span>Total:</span> R$ {total.toFixed(2)}</div>
-
         </div>
     </div>
   )
