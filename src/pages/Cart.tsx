@@ -12,12 +12,12 @@ const Cart = () => {
       const { cart, total } = contextCart
   return (
     <div className="flex flex-col justify-center h-screen mx-5">
-        <div className="h-[300px] lg:h-[650px] md:h-[400px] xl:h-[600px] ">
+        <div className=" flex flex-col justify-center h-[380px] lg:h-[450px] md:h-[400px] xl:h-[600px] ">
             <h1 className="font-semibold text-6xl mb-5">Carrinho</h1>
-            <div className="mt-4 overflow-y-auto overflow-x-hidden h-[500px] lg:h-[600px]">
+            <div className="mt-4 overflow-y-auto overflow-x-hidden h-[350px]">
                 <table className='w-full'>
                     <thead className="border-b-2">
-                        <tr>
+                        <tr >
                             <th className="text-start font-extrabold text-xl">Produto</th>
                             <th className="font-extrabold text-xl ">Preço</th>
                             <th className="font-extrabold text-xl">Qtd.</th>
@@ -28,7 +28,7 @@ const Cart = () => {
                     <tbody className="">
                         {cart?.map((item, index) => (
                         <tr className="border-b-4 " key={index}>
-                            <td className=""><img className="max-w-[140px] ml-5 m-4" src={item.image} alt={item.description} /></td>
+                            <td className=""><img className="max-w-[100px] sm:w-[50px] ml-5 m-4" src={item.image} alt={item.description} /></td>
                             <td className="text-center text-xl">R$ {item.price}</td>
                             <td className="text-center text-xl">{item.amount}</td>
                             <td className="text-center text-xl">R$ {(item.price) * (item.amount)}</td>
