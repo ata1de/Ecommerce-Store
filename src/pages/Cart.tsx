@@ -13,7 +13,7 @@ const Cart = () => {
   return (
     <div className="flex flex-col justify-center h-screen mx-5">
         <div className=" flex flex-col justify-center h-[380px] lg:h-[450px] md:h-[400px] xl:h-[600px] ">
-            <h1 className="font-semibold text-6xl mb-5">Carrinho</h1>
+            <h1 className="font-semibold leading-[1.1] text-6xl mb-5">Carrinho</h1>
             <div className="mt-4 overflow-y-auto overflow-x-hidden h-[350px]">
                 <table className='w-full'>
                     <thead className="border-b-2">
