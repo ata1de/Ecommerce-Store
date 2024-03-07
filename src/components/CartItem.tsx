@@ -16,7 +16,7 @@ const CartItem = ({product}: TypeProduct) => {
 
   console.log(product.id)
   return (
-    <div className="border-b z  ">
+    <div className="border-b  ">
         <div className=' py-2 lg:px-6 w-full min-h-[150px] flex items-center
         gap-x-5 justify-between'>
             <div className='flex items-center gap-x-2'>
